@@ -13,3 +13,7 @@
 ### Single page web app voor en nadelen
 ##### Voordelen:
 - Als de website eenmaal geladen is, is de applicatie razend snel. Doordat de hele app op één pagina staat, is alles al geladen en zijn interacties instant.
+- De code blijft overzichtelijk. Alle code geldt voor één pagina, dus alle code staat bij elkaar. Hierdoor houd je overzicht.
+
+##### Nadelen:
+- Bij refresh een lange laad tijd. Doordat alle content in één pagina zit, duurt het laden van deze pagina langer dan het laden van een normale pagina.
