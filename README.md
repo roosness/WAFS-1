@@ -9,3 +9,12 @@
 - Libraries zijn vaak veel trager dan native javascript. 
 - Ze werken vaak niet in de oudere browsers. Veel javascript libraries ondersteunen oudere browsers niet. Bijvoorbeeld jQuery ondersteunt Internet Explorer 9 en onder niet terwijl native javascript alle browsers ondersteunt.
 - Externe bestanden zijn nodig. Om libraries te kunnen gebruiken moeten er lokaal of online bestanden worden toegevoegd.
+
+### Single page web app voor en nadelen
+##### Voordelen:
+- Als de website eenmaal geladen is, is de applicatie razend snel. Doordat de hele app op één pagina staat, is alles al geladen en zijn interacties instant.
+- 
+
+##### Nadelen:
+- Bij refresh een lange laad tijd.
+- 
