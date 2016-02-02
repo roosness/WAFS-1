@@ -1,28 +1,49 @@
 (function() {
 	var app = {
 		init: function() {
-			routes.elements();
 			routes.init();
 		}
-	}
+	};
 
 	var routes = {
-		elements: function() {
-			this.navigationList = document.getElementById('navigation-list-screen');
-		},
 		init: function() {
+			if(location.hash){
+				sections.toggle(location.hash);
+			} else {
+				sections.toggle('#start-screen')
+			};
 
-			this.navigationList.addEventListener("click", function() {
-				sections.toggle(this);
-			} )
+			window.addEventListener("hashchange", function() {
+				sections.toggle(location.hash);
+			})
 		}
-	}
+	};
 
 	var sections = {
 		toggle: function(route) {
-			var 
+			var screens = document.getElementsByTagName('section');
+			for (var i = 0; i < screens.length; i++) {
+				screens[i].style.display = 'none';
+			};
+
+			var show = document.querySelector(route);
+			show.style.display = 'block';
+
+			this.navigation(route);
+
+		},
+		navigation: function(route) {
+			var ahref = document.getElementsByTagName('a');
+			for (var i = 0; i < ahref.length; i++) {
+				var hrefValue = ahref[i].getAttribute('href');
+				if (hrefValue == route) {
+					ahref[i].parentElement.classList.add("active-menu-button");
+				} else {
+					ahref[i].parentElement.classList.remove("active-menu-button");
+				};
+			};
 		}
-	}
+	};
 
 	app.init();
 })()
