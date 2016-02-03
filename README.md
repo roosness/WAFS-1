@@ -17,3 +17,4 @@
 
 ##### Nadelen:
 - Bij refresh een lange laad tijd. Doordat alle content in één pagina zit, duurt het laden van deze pagina langer dan het laden van een normale pagina.
+- Een complexe webapp kan erg zwaar worden om in één keer te laden. Dit kan ook effect hebben op de performance van de webapp. Natuurlijk zijn er manieren om de performance zo goed mogelijk te houden. Bijvoorbeeld zo min mogelijk DOM elementen aanroepen. In de volgende bron staan nog wat manieren beschreven. (http://ozkatz.github.io/8-ways-to-make-your-single-page-web-app-faster.html)
