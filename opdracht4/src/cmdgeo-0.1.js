@@ -9,6 +9,7 @@
  *   Copyleft 2012, all wrongs reversed.
  */
 (function() {
+    'use strict';
 
     // Event functies - bron: http://www.nczonline.net/blog/2010/03/09/custom-events-in-javascript/ Copyright (c) 2010 Nicholas C. Zakas. All rights reserved. MIT License
     // Gebruik: ET.addListener('foo', handleEvent); ET.fire('event_name'); ET.removeListener('foo', handleEvent);
