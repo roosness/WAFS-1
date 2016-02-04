@@ -21,19 +21,18 @@
 
 	var sections = {
 		toggle: function(route) {
-			var screens = document.getElementsByTagName('section');
+			var screens = document.querySelectorAll('body > section')
 			for (var i = 0; i < screens.length; i++) {
 				screens[i].style.display = 'none';
 			};
 
 			var show = document.querySelector(route);
-			show.style.display = 'block';
+			show.style.display = '';
 
 			this.navigation(route);
-
 		},
 		navigation: function(route) {
-			var ahref = document.getElementsByTagName('a');
+			var ahref = document.querySelectorAll('.menu-button a');
 			for (var i = 0; i < ahref.length; i++) {
 				var hrefValue = ahref[i].getAttribute('href');
 				if (hrefValue == route) {
@@ -46,4 +45,4 @@
 	};
 
 	app.init();
-})()
+})();
