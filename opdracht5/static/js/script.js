@@ -86,9 +86,20 @@
 		submit: function() {
 			this.form.addEventListener("submit", this.getValue.bind(this) )
 		},
+		loading: function() {
+			while (this.list.firstChild) {
+			    this.list.removeChild(this.list.firstChild);
+			}
+
+			var img = document.createElement("img");
+			img.setAttribute('src', 'static/img/loading.gif');
+
+			this.list.appendChild(img);
+		},
 		getValue: function(e) {
 			e.preventDefault();
 			var value = this.searchvalue.value;
+			this.loading();
 			this.pushToArray(value);
 		},
 		render: function() {
