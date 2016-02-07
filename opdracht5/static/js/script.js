@@ -130,7 +130,7 @@
 
 			// Append a loading gif while waiting
 			var img = document.createElement("img");
-			img.setAttribute('src', 'C:/wamp/www/country/img/loading.gif');
+			img.setAttribute('src', 'static/img/loading.gif');
 
 			elem.appendChild(img);
 		},
