@@ -9,7 +9,7 @@ body {
 	padding:0;
 	font-family: 'Roboto';
 	font-weight: normal;
-	background-color: #262626;
+	background-color: #1C2222;
 	color:white;
 }
 
@@ -60,7 +60,9 @@ h1 {
 /* Search form */
 
 #form {
-	width: 300px;
+	max-width: 300px;
+	width: 100%;
+	padding: 10px;
 	margin: 0 auto;
 	margin-top: 30px;
 }
@@ -77,7 +79,7 @@ h1 {
 }
 
 #form button {
-	width: 27%;
+	width: 30%;
 	padding: 10px;
 	border: none;
 	color: white;
@@ -101,20 +103,20 @@ h1 {
 .list li {
 	height:120px;
 	width:100%;
-	background-color: #1d1d1d;
+	background-color: #222B2B;
 	position: relative;
 	list-style-type: none;
 	color: white;
 }
 
 .list li:nth-of-type(odd) {
-	background-color: #262626;
+	background-color: #1C2222;
 }
 
 .list li div {
 	float: left;
 	width: 70%;
-	margin-left: 10px;
+	padding-left: 10px;
 	margin-top: 13px;
 }
 
