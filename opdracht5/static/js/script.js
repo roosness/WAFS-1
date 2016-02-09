@@ -6,7 +6,6 @@
 	var app = {
 		init: function() {
 			el.init();
-			// Set hash to searh
 			navigation.init();
 			search.init();
 		}
@@ -28,31 +27,38 @@
 		}
 	}
 
-	// Object where Routie detects the hashes and displays the right section
+	// Router object
 	var navigation = {
+		// Declare all routes
+		routes: ['search', 'watchlist'],
 		init: function() {
+			// Fire router function on hash change and on refresh
+			window.addEventListener("hashchange", this.router.bind(this), false)
+			window.addEventListener("load", this.router.bind(this), false)
+		},
+		router: function() {
 			// If no hash, set the hash to #search
 			if (!window.location.hash) {
-				routie('search');
+				window.location.hash = 'search';
 			};
+			// Declare hash as the current hash without #
+			var hash = window.location.hash.replace('#', '');
 
-			// Let Routie detect the hash value.
-			routie({
-			    search: function() {
-			    	// When the hash is search, show the search section and make the right button active
-					el.searchScreen.style.display = '';
-					el.watchlistScreen.style.display = 'none';
-					el.navSearch.classList.add('active-menu-button')
-					el.navWatchlist.classList.remove('active-menu-button')
-			    },
-			    watchlist: function() {
-			    	// When the hash is watchlist, show the watchlist section and make the right button active
-					el.searchScreen.style.display = 'none';
-					el.watchlistScreen.style.display = '';
-					el.navSearch.classList.remove('active-menu-button')
-					el.navWatchlist.classList.add('active-menu-button')
-			    },
-			})
+			// Loop throug the routes
+	    	for(var i = 0; i < this.routes.length; i++) {
+	    		// Find the element of the current route
+	    		var elem = document.querySelector('#'+this.routes[i]);
+	    		// Find the a where href is equal to the hash.
+	    		var active = document.querySelector('#navigation a[href="#'+this.routes[i]+'"]');
+	    		// If the route is the hash, display the right section and make the right menu button active. If not, do the opposite
+	    		if(this.routes[i] != hash) {
+	    			elem.style.display = 'none';
+	    			active.parentElement.classList.remove('active-menu-button');
+	    		} else {
+	    			elem.style.display = '';
+	    			active.parentElement.classList.add('active-menu-button');
+	    		};
+	    	}
 		}
 	}
 	
@@ -103,7 +109,7 @@
 			})
 			return promise;
 		},
-		pushToArray: function(search) {
+		pushToroutesay: function(search) {
 			// Fire apiCall with the search string
 			this.apiCall(search).then(function (object) {
 				// When the data is succesfully received, object = searchResults. Then render and display the list
@@ -134,9 +140,9 @@
 			e.preventDefault();
 			// Get value of the search input
 			var value = el.searchvalue.value;
-			// Fire loading and pushToArray
+			// Fire loading and pushToroutesay
 			this.loading(el.searchScreen);
-			this.pushToArray(value);
+			this.pushToroutesay(value);
 		},
 		render: function() {
 			// Filter out all the movies without an image
