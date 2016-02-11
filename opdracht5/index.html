@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dit is de titel</title>
+    <title>Movies</title>
     <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
     <meta name="description" content="Geef hier een beschrijving van de pagina" />
     <meta name="author" content="Raymond Korrel" />
@@ -34,15 +34,17 @@
 
 		<img class="loading" src="static/img/loading.gif">
 		<ul id="list" class="list">
-			<li data-bind="searchresult">
-				<img data-bind="img">
-				<div>
-					<h1 data-bind="title"></h1>
-					<span data-bind="year"></span>
-				</div>
-				<input data-bind="checkbox" type="checkbox">
-				<label data-bind="label"></label>
-			</li>
+			<a data-bind="ahref"> 
+				<li data-bind="searchresult">
+					<img data-bind="img">
+					<div>
+						<h1 data-bind="title"></h1>
+						<span data-bind="year"></span>
+					</div>
+					<input data-bind="checkbox" type="checkbox">
+					<label data-bind="label"></label>
+				</li>
+			</a>
 		</ul>
 	</section>
 
@@ -50,6 +52,26 @@
 		
 	</section>
 
+	<section id="detail">
+		<img class="loading" src="static/img/loading.gif">
+		<div id="detail_container">
+			<div class="detail_img_container">
+				<img class="detail_img">
+				<div class="detail_rating"></div>
+			</div>
+			<div class="detail_movie_info">
+				<h1 class="detail_title"></h1>
+				<span class="detail_year"></span>
+				<input data-bind="detail_checkbox" type="checkbox">
+				<label data-bind="detail_label"></label>
+			</div>
+			<div class="detail_description">
+				<span class="actors_title"> Actors </span>
+				<p class="actors"></p>
+				<p class="description"></p>
+			</div>
+		</div>
+	</section>
 	
 
 

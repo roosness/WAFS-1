@@ -97,7 +97,7 @@ h1 {
 
 .loading {
 	width: 40px;
-	display: block;
+	display: none;
 	margin: 0 auto;
 }
 
@@ -108,9 +108,10 @@ h1 {
 	position: relative;
 	list-style-type: none;
 	color: white;
+	cursor: pointer;
 }
 
-.list li:nth-of-type(odd) {
+.list a:nth-of-type(odd) li {
 	background-color: #1C2222;
 }
 
@@ -172,3 +173,120 @@ h1 {
 }
 
 /* eind checkbox */
+
+/* Detail */
+
+#detail {
+	color: white;
+}
+
+#detail h1 {
+	font-size: 1.4em;
+}
+
+#detail > .loading {
+	margin-top: 30px;
+}
+
+#detail .detail_movie_info {
+	float: left;
+	width: 70%;
+	padding: 20px 10px 10px 10px;
+}
+
+#detail .detail_movie_info span {
+	margin-top: 4px;
+	display: block;
+}
+
+#detail .detail_img_container {
+	float: left;
+	width: 30%;
+	position: relative;
+	height: 100%;
+}
+
+#detail .detail_img_container img {
+	width:100%;
+}
+
+#detail .detail_img_container .detail_rating {
+	position: absolute;
+    width: 100%;
+    height: 16%;
+    bottom: 4px;
+    background: rgba(59,134,134,0.8);
+    text-align: center;
+    padding-top: 4px;
+    color: white;
+    font-size: 3.5vw;
+}
+
+#detail .detail_description {
+	clear: both;
+	padding: 20px 20px 5px 20px;
+}
+
+#detail p {
+	padding: 20px 0 5px 0;
+	margin:0;
+}
+
+#detail .actors_title {
+	font-weight: bold;
+}
+
+#detail .actors {
+	padding-top:0;
+	font-size: 0.9em;
+}
+
+#detail > span {
+	clear: both;
+	font-weight: bold;
+	display: block;
+	padding: 20px 20px 0 20px;
+}
+
+#detail > .actors {
+	font-size: 0.8em;
+	padding-top: 0;
+	clear: both;
+}
+
+#detail > .description {
+	margin: 0;
+}
+
+/* Detail checkbox */
+
+
+#detail input[type="checkbox"]{
+	display: none;
+}
+
+#detail label{
+	display: inline-block;
+    cursor: pointer;
+    position: relative;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+#detail label:before {
+    content: "Add to watchlist";
+    display: inline-block;
+    padding: 8px 10px 8px 10px;
+    background-color: #3B8686;
+}
+
+#detail input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    color: #f3f3f3;
+    text-align: center;
+    line-height: 17px;
+    width:17px;
+    height: 17px;
+}
