@@ -14,6 +14,7 @@
 	// Object where elements are declared
 	var el = {
 		init: function() {
+			//wrap your document.getElementById in a var for better performance
 			this.searchScreen = document.getElementById('search');
 			this.watchlistScreen = document.getElementById('watchlist');
 			this.detailScreen = document.getElementById('detail_container');
